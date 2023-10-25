@@ -19,7 +19,7 @@ public class CustomerController {
     CustomerRepository customerRepository;
 
     @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getAllCustomers(@RequestParam(name = "stars", required = false) String name){
+    public ResponseEntity<List<Customer>> getAllCustomers(@RequestParam(name = "name", required = false) String name){
 
         if (name != null){
             return new ResponseEntity(customerRepository.findByName(name), HttpStatus.OK);
